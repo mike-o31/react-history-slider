@@ -1,0 +1,176 @@
+.slider-container {
+	max-width: 90%;
+	height: 450px;
+	margin: 100px auto 0;
+	position: relative;
+	overflow: hidden;
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.slide {
+	display: grid;
+	grid-template-columns: 50% 50%;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	opacity: 0;
+	transition: opacity ease-in-out 0.5s;
+}
+
+.slide img {
+	grid-row: 1 / span 2;
+	grid-column: 1 / span 1;
+	width: 100%;
+	height: 29rem;
+}
+
+.year {
+	justify-self: center;
+}
+
+.note-list {
+	grid-row: 2 / span 2;
+	grid-column: 2 / span 2;
+}
+
+.note {
+	display: inline-flex;
+	margin: 1rem 4rem;
+}
+
+.active-animation {
+	opacity: 1;
+}
+
+.btn-slide {
+	width: 3rem;
+	height: 3rem;
+	border-radius: 50%;
+	background-color: #f1f1f1;
+	border: 1px solid rgba(34, 34, 34, 0.287);
+	opacity: 0.5;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+}
+
+.btn-slide .icons {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	pointer-events: none;
+}
+
+.previous {
+	top: 50%;
+	left: 2%;
+	transform: translate(-50%);
+}
+
+.next {
+	top: 50%;
+	right: -3%;
+	transform: translate(-72%);
+}
+
+.container-dots {
+	position: absolute;
+	bottom: 10px;
+	left: 50%;
+	transform: translate(-50%);
+	display: flex;
+}
+
+.dot {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 3px solid #f1f1f1;
+	margin: 0 5px;
+	background-color: #f1f1f1;
+	cursor: pointer;
+}
+
+.active {
+	background-color: rgb(32, 32, 32);
+}
+
+@media screen and (max-width: 1800px) {
+	.previous {
+		left: 3%;
+		transform: translate(-73%);
+	}
+
+	.next {
+		right: -3%;
+		transform: translate(-73%);
+	}
+}
+
+@media screen and (max-width: 1050px) {
+	.previous {
+		transform: translate(-60%);
+	}
+
+	.next {
+		transform: translate(-55%);
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.previous {
+		transform: translate(-45%);
+	}
+
+	.next {
+		transform: translate(-42%);
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.slide {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.slide img {
+		height: 15rem;
+	}
+
+	.btn-slide .icons {
+		flex-direction: column;
+	}
+
+	.previous {
+		width: 8%;
+		height: 8%;
+		transform: translate(-40%);
+	}
+
+	.next {
+		width: 8%;
+		height: 8%;
+		transform: translate(-35%);
+	}
+
+	.year {
+		font-size: 1.5rem;
+		order: 0;
+	}
+
+	.note {
+		margin: 0.2rem 1rem;
+		font-size: 0.5rem;
+	}
+
+	.container-dots {
+		bottom: 5px;
+	}
+
+	.dot {
+		width: 8px;
+		height: 8px;
+	}
+}
